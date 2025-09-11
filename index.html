@@ -18,21 +18,48 @@
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <h1>Instagram Unfollowers</h1>
-        <p>Upload your Instagram <strong>followers</strong> and <strong>following</strong> files to see who unfollowed you.</p>
+        <p>
+            Upload your Instagram <strong>followers</strong> and <strong>following</strong> files to see who has unfollowed you.
+        </p>
+        <p class="instructions">
+            To get started, you <strong>must</strong> download your Instagram data first. 
+            Once downloaded, drag and drop your <strong>following.html</strong> and <strong>followers_1.html</strong> files into the fields below.
+        </p>
 
-        <div class="input-group">
-            <label for="following-file">Following File:</label>
-            <input type="file" id="following-file" accept=".html">
+        <!-- Tutorial Video Section -->
+        <div class="video-section">
+            <h2>How to Download Your Instagram Data</h2>
+            <p>Watch this quick tutorial to learn how to download the files needed for this tool.</p>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/Ys2_HeT5Pqs?si=6X6iI1okMV8lah40" 
+                    title="How to download Instagram data tutorial" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
 
-        <div class="input-group">
-            <label for="followers-file">Followers File:</label>
-            <input type="file" id="followers-file" accept=".html">
+        <!-- File Upload Section -->
+        <div class="upload-section">
+            <div class="input-group">
+                <label for="following-file">Following File:</label>
+                <input type="file" id="following-file" accept=".html">
+            </div>
+
+            <div class="input-group">
+                <label for="followers-file">Followers File:</label>
+                <input type="file" id="followers-file" accept=".html">
+            </div>
+
+            <button id="process-btn">Find Unfollowers</button>
         </div>
 
-        <button id="process-btn">Find Unfollowers</button>
-
+        <!-- Results Section -->
         <div id="results">
             <h2>Results</h2>
             <ul id="list"></ul>
