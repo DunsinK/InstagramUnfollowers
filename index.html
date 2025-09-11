@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel ="stylesheet" href="https://pyscript.net/releases/2024.2.1/core.css">
-    
+    <script defer type="module" src = "https://pyscript.net/releases/2024.2.1/core.js"></script>
+    <py-config>
+        packages = ["beautifulsoup4", "lxml"]
+    </py-config>
 </head>
 <body>
     <h1>Find Who Isn't Following You Back</h1>
@@ -18,7 +21,24 @@
     <input type="file" id="followers-file" accept=".html">
     <br><br>
     <button id="process-btn">Find Unfollowers</button>
+    <button id = "test">Click Me</button>
     <div id="results"></div>
-    <py-script src="./main.py"></py-script>
+    <script>
+        console.log("hello world")
+        document.getElementById("test").onclick = ()=>{
+            console.log("testing")
+        }
+    </script>
+    <py-script>
+        from js import console, document
+
+        console.log("hello world")
+
+        def log_testing():
+            console.log("pooping")
+
+        document.getElementById("test").onclick = log_testing
+    </py-script>
+    <py-script > print("hello world")</py-script>
 </body>
 </html>
