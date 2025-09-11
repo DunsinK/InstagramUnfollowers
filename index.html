@@ -22,23 +22,13 @@
     <br><br>
     <button id="process-btn">Find Unfollowers</button>
     <button id = "test">Click Me</button>
-    <div id="results"></div>
-    <script>
-        console.log("hello world")
-        document.getElementById("test").onclick = ()=>{
-            console.log("testing")
-        }
-    </script>
-    <py-script>
-        from js import console, document
-
-        console.log("hello world")
-
-        def log_testing():
-            console.log("pooping")
-
-        document.getElementById("test").onclick = log_testing
+    <div id="results">
+        <ul id="list"></ul>
+    </div>
+    
+    <py-script src = ./main.py>
+       
     </py-script>
-    <py-script > print("hello world")</py-script>
+   
 </body>
 </html>
