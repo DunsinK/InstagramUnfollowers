@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Instagram Unfollowers</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel ="stylesheet" href="https://pyscript.net/releases/2024.2.1/core.css">
-    <script defer type="module" src = "https://pyscript.net/releases/2024.2.1/core.js"></script>
+    <title>Instagram Unfollowers</title>
+
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.2.1/core.css">
+    <script defer type="module" src="https://pyscript.net/releases/2024.2.1/core.js"></script>
+    
     <py-config>
         packages = ["beautifulsoup4", "lxml"]
     </py-config>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Find Who Isn't Following You Back</h1>
-    <p>Please upload both your "following" and "followers" HTML files.</p>
-    <label for="following-file">Following File:</label>
-    <input type="file" id="following-file" accept=".html">
-    <br><br>
-    <label for="followers-file">Followers File:</label>
-    <input type="file" id="followers-file" accept=".html">
-    <br><br>
-    <button id="process-btn">Find Unfollowers</button>
-    <button id = "test">Click Me</button>
-    <div id="results">
-        <ul id="list"></ul>
+    <div class="container">
+        <h1>Instagram Unfollowers</h1>
+        <p>Upload your Instagram <strong>followers</strong> and <strong>following</strong> files to see who unfollowed you.</p>
+
+        <div class="input-group">
+            <label for="following-file">Following File:</label>
+            <input type="file" id="following-file" accept=".html">
+        </div>
+
+        <div class="input-group">
+            <label for="followers-file">Followers File:</label>
+            <input type="file" id="followers-file" accept=".html">
+        </div>
+
+        <button id="process-btn">Find Unfollowers</button>
+
+        <div id="results">
+            <h2>Results</h2>
+            <ul id="list"></ul>
+        </div>
     </div>
-    
-    <py-script src = ./main.py>
-       
-    </py-script>
-   
+
+    <py-script src="./main.py"></py-script>
 </body>
 </html>
