@@ -1,8 +1,10 @@
 from bs4 import BeautifulSoup
+import zipfile
+import os
 from js import document
 
-async def notFollowingBack(event):
-    print("main.py running")
+async def notFollowingBackMain(event):
+   
     following = document.getElementById("following-file").files.item(0)
     followers = document.getElementById("followers-file").files.item(0)
     not_following_back = {}
@@ -38,7 +40,43 @@ async def notFollowingBack(event):
         li.textContent = key
         listVar.appendChild(li)
 
-document.getElementById("process-btn").onclick = notFollowingBack
+async def notFollowingBackZip(event):
+   
+    zip_connections = document.getElementById("zip-file").files.item(0)
+    
+    not_following_back = {}
+    print(following)
+    print(followers)
+    
+    if not (following and followers):
+        document.getElementById("results").innerHTML = "<p>Please select both files.</p>"
+        return
+    followString = await following.text()
+    followersString = await followers.text()
+    #print(followString)
+    #print(followersString)
+
+    followersSoup = BeautifulSoup(followersString, 'lxml') # makes soup object
+    followers_name_tags = followersSoup.find_all('a') # finds all name <a> tags
+    followingSoup = BeautifulSoup(followString, 'lxml') 
+    following_name_tags = followingSoup.find_all('a') 
+
+    for tag in following_name_tags:
+        #print(tag.text)
+        not_following_back[tag.text] = 0
+    for tag in followers_name_tags:
+        try:
+            del not_following_back[tag.text]  
+        except:
+            continue 
+    listVar = document.getElementById("list")
+    for key in not_following_back:
+        print(key)
+        resultsDiv = document.getElementById("results")
+        li = document.createElement("li")
+        li.textContent = key
+        listVar.appendChild(li)
+document.getElementById("process-btn").onclick = notFollowingBackMain
 
 #How the Program works
 # Import your follower and following html files then adjust the html in the open method to be accurate  

@@ -10,7 +10,7 @@
     <script defer type="module" src="https://pyscript.net/releases/2024.2.1/core.js"></script>
     
     <py-config>
-        packages = ["beautifulsoup4", "lxml"]
+        packages = ["beautifulsoup4", "lxml","zipfile",'os']
     </py-config>
 
     <!-- Custom CSS -->
@@ -43,9 +43,19 @@
                 </iframe>
             </div>
         </div>
-
+    
         <!-- File Upload Section -->
-        <div class="upload-section">
+        
+        <!-- Content to show/hide -->
+        <div class="hidden-section">
+            <input type = "checkbox" id="toggle" >
+            <p class = "toggle">hello</p>
+            <p>This section is now visible because the switch is ON!</p>
+        </div>
+        
+
+        <!-- Two separate files section (default) -->
+        <div id="single-section" class="upload-section">
             <div class="input-group">
                 <label for="following-file">Following File:</label>
                 <input type="file" id="following-file" accept=".html">
@@ -55,15 +65,25 @@
                 <label for="followers-file">Followers File:</label>
                 <input type="file" id="followers-file" accept=".html">
             </div>
-
-            <button id="process-btn">Find Unfollowers</button>
         </div>
 
-        <!-- Results Section -->
-        <div id="results">
-            <h2>Results</h2>
-            <ul id="list"></ul>
+        <!-- Single zip file section (hidden by default) -->
+        <div id="zip-section" class="upload-section-zip">
+            <div class="input-group">
+                <label for="zip-file">Instagram Data Zip:</label>
+                <input type="file" id="zip-file" accept=".zip">
+            </div>
         </div>
+
+        <!-- Action Button -->
+        <button id="process-btn">Find Unfollowers</button>
+
+
+            <!-- Results Section -->
+            <div id="results">
+                <h2>Results</h2>
+                <ul id="list"></ul>
+            </div>
     </div>
 
     <py-script src="./main.py"></py-script>
