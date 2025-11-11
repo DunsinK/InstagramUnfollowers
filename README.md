@@ -37,8 +37,8 @@ This app allows users to **securely upload their official Instagram data export*
 
 ---
 
-## Testing
+## 💻 Testing
 
 1. CD into the directory with the cloned repository
 2. Run the command `python -m http.server 8000` to create a python HTTP server
-3. Access the page from `http://localhost:8000/index.html`
+3. Access the page from [http://localhost:8000/index.html](http://localhost:8000/index.html)
