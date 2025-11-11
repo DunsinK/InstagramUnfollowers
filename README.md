@@ -28,7 +28,7 @@ This app allows users to **securely upload their official Instagram data export*
    - Instagram will email you a download link — save the `.zip` file.
 
 2. **Upload the file to the app**:
-   - Go to [https://yourappname.vercel.app](https://instagram-unfollowers-gray.vercel.app/)
+   - Go to [The Link](https://instagram-unfollowers-gray.vercel.app/)
    - Upload the Instagram data ZIP file using the app interface.
 
 3. **See who unfollowed you**:
