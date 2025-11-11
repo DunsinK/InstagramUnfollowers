@@ -36,6 +36,7 @@ async def notFollowingBack(event):
         resultsDiv = document.getElementById("results")
         li = document.createElement("li")
         li.textContent = key
+        #li.href = 'instagram.com/user/key' # should work to add link under each name
         listVar.appendChild(li)
 
 document.getElementById("process-btn").onclick = notFollowingBack
