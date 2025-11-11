@@ -34,11 +34,8 @@ async def notFollowingBack(event):
     for key in not_following_back:
         print(key)
         resultsDiv = document.getElementById("results")
-        a = document.createElement("a")
-        a.href = key
-        a.textContent = key
         li = document.createElement("li")
-        li.appendChild(a)
+        li.textContent = key
         listVar.appendChild(li)
 
 document.getElementById("process-btn").onclick = notFollowingBack
