@@ -16,89 +16,64 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEEYK68MZQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SEEYK68MZQ');
-</script>
 <body>
     <div class="container">
-        <!-- Header -->
-        <h1>Instagram Unfollowers</h1>
+        <h1 class="modern-title">Instagram Unfollowers</h1>
+
         <div class="description">
-                <p>
-                Ever wonder who’s unfollowed you on Instagram? </p> 
-            <p>This app makes it easy to find out — 
-            <strong>safely and securely</strong>. By using the official Instagram <strong>data download</strong> feature, 
-            you can upload your <strong>followers</strong> and <strong>following</strong> files to instantly see 
-            who isn’t following you back. No scraping, no bots, and 
-            <strong>no risk of getting banned</strong> — your information stays completely private on your device.
-                </p>
+            <p>Ever wonder who’s unfollowed you on Instagram?</p>
+            <p>
+                This tool uses Instagram's official <strong>Download Your Data</strong> feature to safely check
+                who isn't following you back — no scraping, no bots, and everything runs locally on your device.
+            </p>
         </div>
 
-        
-
-        <!-- Tutorial Video Section -->
         <div class="video-section">
             <h2>How to Download Your Instagram Data</h2>
-            <p>Read the instructions or Watch the quick tutorial to learn how to download the files needed for this tool.</p>
+            <p>Follow these steps or watch the tutorial below:</p>
             <ul>
-                <li>Open the Instagram app or website and go to <strong>Settings</strong>.</li>
-                <li>Navigate to <strong>Privacy and Security</strong> (or <strong>Your Activity</strong> on mobile).</li>
+                <li>Go to <strong>Settings</strong> → <strong>Your Activity</strong> / <strong>Privacy</strong>.</li>
                 <li>Select <strong>Download Your Information</strong>.</li>
-                <li>Request your data, then check your email for a download link from Instagram.</li>
-                <li>If you only request your followers and following data from Instagram, the download will be much faster usually just   <strong>5–10 minutes</strong> compared to <strong>1 hour+  </strong> if you select all data.</li>
-                <li>Once you receive the data , extract the files and locate <strong>following.html</strong> and <strong>followers_1.html</strong>.</li>
-                <li>Drag and drop these two files into the fields below to see who has unfollowed you.</li>
+                <li>Request your data (followers + following only for fastest results).</li>
+                <li>Extract the ZIP and locate <strong>following.html</strong> and <strong>followers_1.html</strong>.</li>
+                <li>Upload both files below.</li>
             </ul>
-            <p> </p>
-            
+
             <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/Ys2_HeT5Pqs?si=6X6iI1okMV8lah40" 
-                    title="How to download Instagram data tutorial" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+                <iframe src="https://www.youtube.com/embed/Ys2_HeT5Pqs?si=6X6iI1okMV8lah40" allowfullscreen></iframe>
             </div>
-            <p> </p>
         </div>
 
-        <!-- File Upload Section -->
         <div class="upload-section">
-            <div class="input-group">
-                <label for="following-file">Following File:</label>
-                <input type="file" id="following-file" accept=".html">
-            </div>
+            <div class="input-group custom-file">
+    <label for="following-file">Following File:</label>
+    <div class="file-wrapper">
+        <span class="file-label">Select Following File</span>
+    </div>
+    <input type="file" id="following-file" accept=".html" />
+</div>
 
-            <div class="input-group">
-                <label for="followers-file">Followers File:</label>
-                <input type="file" id="followers-file" accept=".html">
-            </div>
+            <div class="input-group custom-file">
+    <label for="followers-file">Followers File:</label>
+    <div class="file-wrapper">
+        <span class="file-label">Select Followers File</span>
+    </div>
+    <input type="file" id="followers-file" accept=".html" />
+</div>
 
             <button id="process-btn">Find Unfollowers</button>
         </div>
 
-        <!-- Results Section -->
         <div id="results">
             <h2>Results</h2>
             <ul id="list"></ul>
         </div>
 
-        <footer style="text-align: center; margin-top: 40px; font-size: 14px; color: #666;">
-    <p>
-        Made by <a href="https://www.linkedin.com/in/dunsink" target="_blank" style="color: #0077b5; text-decoration: none;">
-        <strong>Dunsin Komolafe</strong></a>
-    </p>
-</footer>
-
+        <footer>
+            Made by <a href="https://www.linkedin.com/in/dunsink" target="_blank"><strong>Dunsin Komolafe</strong></a>
+        </footer>
     </div>
-    
+
     <py-script src="./main.py"></py-script>
 </body>
 </html>

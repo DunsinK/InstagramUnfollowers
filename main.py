@@ -11,12 +11,11 @@ async def notFollowingBack(event):
     
     if not (following and followers):
         document.getElementById("results").innerHTML = "<p>Please select both files.</p>"
+        print("Need both files")
         return
     followString = await following.text()
-    followersString = await followers.text()
-    #print(followString)
-    #print(followersString)
-
+    followersString = await followers.text() # files to text
+   
     followersSoup = BeautifulSoup(followersString, 'lxml') # makes soup object
     followers_name_tags = followersSoup.find_all('a') # finds all name <a> tags
     followingSoup = BeautifulSoup(followString, 'lxml') 
@@ -24,7 +23,8 @@ async def notFollowingBack(event):
 
     for tag in following_name_tags:
         #print(tag.text)
-        not_following_back[tag.text] = 0
+        not_following_back[tag.text[29:]] = tag.text
+        #print(f"{tag.text[29:]} {type (tag.text)}")
     for tag in followers_name_tags:
         try:
             del not_following_back[tag.text]  
@@ -32,14 +32,22 @@ async def notFollowingBack(event):
             continue 
     listVar = document.getElementById("list")
     for key in not_following_back:
-        print(key)
+        #print(key)
         resultsDiv = document.getElementById("results")
         li = document.createElement("li")
-        li.textContent = key
+        a = document.createElement("a")
+        
+        a.href = not_following_back[key]
+        a.target = "_blank"
+        a.textContent = key
+        
+        li.appendChild(a)
         #li.href = 'instagram.com/user/key' # should work to add link under each name
         listVar.appendChild(li)
 
 document.getElementById("process-btn").onclick = notFollowingBack
+
+
 
 #How the Program works
 # Import your follower and following html files then adjust the html in the open method to be accurate  
